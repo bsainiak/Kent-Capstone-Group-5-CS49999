@@ -22,6 +22,9 @@
     <nav class="nav-links">
         <a href="aboutMe.html">About Me</a>
         <a href="contact.html">Contact</a>
+
+        <a href="#" id="featured-download" class="cta-btn">Download Featured Photo</a>
+        
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScItaIEJJUYeuZIeEyVkKj-dsKjH9J_uKsLu_fnXZ0eSiY2Eg/viewform?usp=publish-editor" class="cta-btn" target="_blank" rel="noopener noreferrer">Submit a Request</a>
     </nav>
 </header>
@@ -95,5 +98,22 @@
     <a href="#">Copy TAC</a>
 </footer>
 
+<script>
+    //Photo route
+    const mockPhotoPath = "images/_DSC5696.jpg"; 
+    const downloadName = "featured_image.jpg";
+
+    const downloadBtn = document.getElementById('featured-download');
+
+    //Opens the save as functionality
+    downloadBtn.href = mockPhotoPath;
+    downloadBtn.setAttribute('download', downloadName);
+
+    //click log to verify it's working
+    downloadBtn.addEventListener('click', () => {
+        console.log("Downloading mock file: " + mockPhotoPath);
+    });
+</script>
+    
 </body>
 </html>
