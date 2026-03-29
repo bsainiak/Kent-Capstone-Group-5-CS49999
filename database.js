@@ -30,6 +30,37 @@ app.use(express.static(__dirname));
 app.use("/images", express.static(path.join(__dirname, 'images')));
 //app.use("/images", express.static('images')); // Fixed: 'images' needs quotes
 
+
+app.get('/api/photos', (req, res) => {
+    const searchTerm = req.query.search; //searches from the details placed in the search bar
+    
+    let sql = 'SELECT DISTINCT Images.ImageID, Images.FilePath, Images.Cost FROM Images'; //displays all of the photos in the event of no search
+    let params = [];
+
+    if (searchTerm) {
+    //Prevents the duplicate entries of photos being displayed (I later found that the error was from the database add extra photos on initialization)
+    //It works currently but if needed remove the distinct portion of the query
+    sql = `SELECT DISTINCT Images.ImageID, Images.FilePath, Images.Cost 
+           FROM Images 
+           INNER JOIN Event ON Images.EventID = Event.EventID 
+           WHERE Event.Series LIKE ? OR Event.Location LIKE ? OR Event.Date LIKE ?`;
+        
+        //Searchs and returns the photos if the search contains any of the associated terms (race, date, location)
+        params = [`%${searchTerm}%`, `%${searchTerm}%`, `%${searchTerm}%`];
+    }
+
+    //error catch if the database connection does not work.
+    db.all(sql, params, (err, rows) => {
+        if (err) {
+            console.error(err.message);
+            return res.status(500).json({ error: "Database query failed" });
+        }
+        res.json(rows); 
+    });
+});
+
+
+/*
 // Fetch photos from the SQLite database
 app.get('/api/photos', (req, res) => {
     // Select ImageID for keys and FilePath for the source
@@ -44,7 +75,7 @@ app.get('/api/photos', (req, res) => {
         res.json(rows); 
     });
 });
-
+*/
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
