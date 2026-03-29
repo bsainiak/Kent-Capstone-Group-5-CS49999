@@ -1,3 +1,4 @@
+
 -- basic table for sql lite
 CREATE TABLE IF NOT EXISTS Event (
     EventID  INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -6,6 +7,7 @@ CREATE TABLE IF NOT EXISTS Event (
     Location VARCHAR(255) NOT NULL
 );
 
+-- creates a database table
 CREATE TABLE IF NOT EXISTS Images (
     ImageID  INTEGER PRIMARY KEY AUTOINCREMENT,
     EventID  INTEGER NOT NULL,
@@ -16,10 +18,11 @@ CREATE TABLE IF NOT EXISTS Images (
 );
 
 -- test data not final
+-- gives photos values that can be searched for in the html
 INSERT INTO Event (Series, Date, Location) 
-VALUES ('IMSA', '2025-09-01', 'Daytona International Speedway');
+VALUES ('Race Series 1', '2026-03-29', 'Location');
 
 INSERT INTO Images (EventID, FilePath, Cost) 
 VALUES (1, 'images/_DSC5696.jpg', 10.00),
-       (1, 'images/_DSC5700.jpg', 15.00),
-       (1, 'images/_DSC5701.jpg', 20.00);
+       (1, 'images/_DSC5703.jpg', 15.00),
+       (1, 'images/_DSC5719.jpg', 20.00);
