@@ -16,8 +16,8 @@
 </div>
 
     <div class="search-bar">
-        <input type="text" placeholder="Search...">
-    </div>
+    <input type="text" id="search-input" placeholder="Search series or location...">
+</div>
 
     <nav class="nav-links">
         <a href="aboutMe.html">About Me</a>
@@ -44,94 +44,71 @@
     <p>Loading gallery...</p>
 </main>
 
+
+
 <script>
-    async function loadGallery() {
-        const gallery = document.getElementById('photo-gallery');
-        
-        try {
-            const response = await fetch('/api/photos');
-            const photos = await response.json();
+    const searchInput = document.getElementById('search-input');
+    const gallery = document.getElementById('photo-gallery');
 
-            gallery.innerHTML = ''; //removes loading text
+    //waits for the enter key to make any changes
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const term = searchInput.value.trim();
+            loadGallery(term); 
+        }
+    });
 
-            if (photos.length === 0) {
-                gallery.innerHTML = '<p>No photos found in the database.</p>';
-                return;
+    async function loadGallery(search = '') {
+
+            if (search.toLowerCase() === 'all') {
+                search = '';
             }
 
-            photos.forEach(photo => {
-                const card = document.createElement('div');
-                card.className = 'card';
+            try {
+                gallery.innerHTML = '<p>Searching...</p>';
                 
-                // Only renders the image from the database FilePath
-                card.innerHTML = `
-                    <img src="${photo.FilePath}" alt="Photography Portfolio Image">
-                `;
-                gallery.appendChild(card);
-            });
-        } catch (err) {
-            console.error("Error loading gallery:", err);
-            gallery.innerHTML = "<p>Error: Could not connect to the database.</p>";
+                //encodes the search portion to the url
+                const url = search 
+                    ? `/api/photos?search=${encodeURIComponent(search)}` 
+                    : '/api/photos';
+
+                //fetch calls the backend while the json is an array of photos that can easily be looped through
+                const response = await fetch(url);
+                const photos = await response.json();
+
+                gallery.innerHTML = ''; 
+
+                if (photos.length === 0) {
+                    //if nothing in the database matches the tag it returns no result and an error
+                    gallery.innerHTML = `<p class="no-results">No photos found for "${search}".</p>`;
+                    return;
+                }
+
+                photos.forEach(photo => {
+                    //for every photo in the json created by the search and fetch
+                    //creates a new html div tag for each of the photos
+                    const card = document.createElement('div');
+                    card.className = 'card';
+        
+                    card.innerHTML = `
+                        <img src="${photo.FilePath}" 
+                        alt="Gallery Image" 
+                        onerror="this.closest('.card').remove();">
+                    `;
+                    gallery.appendChild(card);
+                });
+            
+            } catch (err) {
+                console.error("Error loading gallery:", err);
+                gallery.innerHTML = "<p>Error: Could not update the gallery.</p>";
+            }
         }
-    }
 
-    // Load photos automatically when the page opens
-    window.onload = loadGallery;
+    // Load everything when the page first opens
+    window.onload = () => loadGallery();
 </script>
-    
-<!--
-<main class="gallery">
 
-    <div class="card">
-        <img src="images/_DSC5696.jpg" alt="">
-    </div>
 
-    <div class="card">
-        <img src="images/_DSC5700.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5701.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5702.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5703.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5704.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5719.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5723.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5729.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5730.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5696.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5700.jpg" alt="">
-    </div>
-
-</main>
--->
 </div>
 
 <footer>
