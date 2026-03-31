@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        #profile-view { display: none; margin-top: 20px; }
+        img { border-radius: 50%; width: 100px; height: 100px; }
+        button { padding: 10px 20px; cursor: pointer; margin: 10px; background-color: #333; color: white; border: none; border-radius: 4px;}
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back to Home</a>
+        <button id="btn-login" style="display: none;">Log In</button>
+        <button id="btn-logout" style="display: none;">Log Out</button>
+    </nav>
+
+    <div id="profile-view">
+        <h2>Your Account</h2>
+        <img id="profile-pic" src="" alt="Profile Picture">
+        <p><strong>Name:</strong> <span id="profile-name"></span></p>
+        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+        <button onclick="alert('To reset your password, please log out, click Log In, and select Forgot Password on the Auth0 screen.')">Reset Password</button>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // Load account details after auth.js initializes
+        setTimeout(async () => {
+            const isAuthenticated = await auth0Client.isAuthenticated();
+            if (isAuthenticated) {
+                const user = await auth0Client.getUser();
+                document.getElementById("profile-pic").src = user.picture;
+                document.getElementById("profile-name").innerText = user.name;
+                document.getElementById("profile-email").innerText = user.email;
+                document.getElementById("profile-view").style.display = "block";
+            } else {
+                document.getElementById("profile-view").innerHTML = "<p>Please log in to manage your account.</p>";
+                document.getElementById("profile-view").style.display = "block";
+            }
+        }, 1000); 
+    </script>
+</body>
+</html>
