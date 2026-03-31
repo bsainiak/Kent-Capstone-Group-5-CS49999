@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Downloads</title>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        #secure-downloads { display: none; }
+        #access-denied { display: none; color: red; margin-top: 50px; }
+        .photo-card { border: 1px solid #ccc; padding: 15px; margin: 10px; display: inline-block; border-radius: 8px;}
+        button { padding: 10px 20px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back to Home</a>
+        <button id="btn-login" style="display: none;">Log In</button>
+        <button id="btn-logout" style="display: none;">Log Out</button>
+    </nav>
+
+    <div id="access-denied">
+        <h2>Access Denied</h2>
+        <p>You must be logged in and have purchased access to view your downloads.</p>
+    </div>
+
+    <div id="secure-downloads">
+        <h2>Your Purchased Racing Photos</h2>
+        <div id="photo-container">
+            <div class="photo-card">
+                <p>High-Res Track Photo</p>
+                <button onclick="alert('Downloading image...')">Download High-Res</button>
+            </div>
+        </div> 
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // Check if user is allowed to see the downloads
+        setTimeout(async () => {
+            const isAuthenticated = await auth0Client.isAuthenticated();
+            if (isAuthenticated) {
+                document.getElementById("secure-downloads").style.display = "block";
+            } else {
+                document.getElementById("access-denied").style.display = "block";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
