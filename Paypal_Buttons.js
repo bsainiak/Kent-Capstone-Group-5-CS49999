@@ -1,4 +1,4 @@
-// Helper / Utility functions
+/*// Helper / Utility functions
 
 //Sets up paypal buttons
 //Code handles the creation and functionality of the buttons
@@ -91,8 +91,97 @@ url_to_head(paypal_sdk_url + "?client-id=" + client_id + "&enable-funding=venmo&
             console.log(err);
         }
     });
-    paypal_buttons.render('#payment_options');
+    paypal_buttons.render('#paypal-button-container');
 })
+.catch((error) => {
+    console.error(error);
+});*/
+
+// PayPal Button Setup
+const paypal_sdk_url = "https://www.paypal.com/sdk/js";
+const client_id = "AS4qdkVEH0PROYKitc6h81kSMvbcHR1xo2h1FPwRuZ48Mlc5dlNGmt7vJyBAB_7Ut3ieJQVcjlxkzxqS";
+const currency = "USD";
+const intent = "capture";
+
+function loadPayPalScript() {
+    return new Promise((resolve, reject) => {
+        if (window.paypal) {
+            resolve();
+            return;
+        }
+
+        const script = document.createElement("script");
+        script.src = `${paypal_sdk_url}?client-id=${client_id}&currency=${currency}&intent=${intent}`;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}
+
+function renderPayPalButtons() {
+
+    document.getElementById("paypal-button-container").innerHTML = "";
+
+    loadPayPalScript().then(() => {
+
+        const paypal_buttons = paypal.Buttons({
+
+            style: {
+                shape: 'rect',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'paypal'
+            },
+
+            createOrder: function () {
+                return fetch("http://localhost:3000/create_order", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ intent: intent })
+                })
+                .then(res => res.json())
+                .then(order => order.id);
+            },
+
+            onApprove: function (data) {
+                return fetch("http://localhost:3000/complete_order", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        intent: intent,
+                        order_id: data.orderID
+                    })
+                })
+                .then(res => res.json())
+                .then(details => {
+
+                    document.getElementById("alerts").innerHTML = `
+                        <div class="ms-alert">
+                            ✅ Thank you ${details.payer.name.given_name}!
+                            Payment successful.
+                        </div>
+                    `;
+
+                    paypal_buttons.close();
+                });
+            },
+
+            onCancel: function () {
+                document.getElementById("alerts").innerHTML = `
+                    <div class="ms-alert">Order cancelled.</div>
+                `;
+            },
+
+            onError: function (err) {
+                console.error(err);
+            }
+
+        });
+
+        paypal_buttons.render('#paypal-button-container');
+
+    });
+}
 .catch((error) => {
     console.error(error);
 });
