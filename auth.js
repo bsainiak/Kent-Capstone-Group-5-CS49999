@@ -4,9 +4,8 @@ let auth0Client = null;
 window.onload = async () => {
     try {
         auth0Client = await auth0.createAuth0Client({
-            // 🛑 STOP: Replace these two lines with your real keys from the Auth0 Dashboard!
-            domain: "YOUR_REAL_AUTH0_DOMAIN", 
-            clientId: "YOUR_REAL_CLIENT_ID",
+            domain: "dev-mofp6o657an4qvyp.us.auth0.com", 
+            clientId: "kZMspkx3muJ92A8p73N2RU1QO7wbWnh0",
             authorizationParams: {
                 redirect_uri: window.location.origin
             }
@@ -19,7 +18,7 @@ window.onload = async () => {
     // Check if the user is returning from the Auth0 login page
     if (location.search.includes("state=") && location.search.includes("code=")) {
         await auth0Client.handleRedirectCallback();
-        window.history.replaceState({}, document.title, "/"); // Cleans up the URL
+        window.history.replaceState({}, document.title, "/"); 
     }
 
     // Check if the user is currently logged in
@@ -33,10 +32,10 @@ window.onload = async () => {
         const loginBtn = document.getElementById("btn-login");
         const logoutBtn = document.getElementById("btn-logout");
         
-        if (loginBtn) loginBtn.style.display = "none"; // Hide Log In
-        if (logoutBtn) logoutBtn.style.display = "inline-block"; // Show Log Out
+        if (loginBtn) loginBtn.style.display = "none"; 
+        if (logoutBtn) logoutBtn.style.display = "inline-block"; 
 
-        // 2. Populate Account Page (if they are on account.html)
+        // 2. Populate Account Page 
         if (window.location.pathname.includes("account.html")) {
             const emailDisplay = document.getElementById("user-email");
             const profilePic = document.getElementById("profile-pic");
@@ -48,7 +47,6 @@ window.onload = async () => {
     } else {
         console.log("User is not logged in.");
         
-        // Ensure Log In is visible and Log Out is hidden for guests
         const loginBtn = document.getElementById("btn-login");
         const logoutBtn = document.getElementById("btn-logout");
         
@@ -56,7 +54,7 @@ window.onload = async () => {
         if (logoutBtn) logoutBtn.style.display = "none";
     }
 
-    // Attach Event Listener to ALL Login Buttons (Nav bar & Login Page)
+    // Attach Event Listener to ALL Login Buttons
     const loginButtons = document.querySelectorAll("#btn-login");
     loginButtons.forEach(btn => {
         btn.addEventListener("click", async () => {
