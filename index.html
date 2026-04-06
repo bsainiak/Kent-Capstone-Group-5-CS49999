@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
     <meta charset="UTF-8">
     <title>Danko</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,18 +19,14 @@
         <input type="text" placeholder="Search...">
     </div>
 
-    <nav>
-            <a href="index.html">Home</a>
-            <a href="aboutMe.html">About Me</a>
-            <a href="styles.html">Styles</a>
-            <a href="images (1).html">Images</a>
-            <a href="contact.html">Contact</a>
-            <a href="account.html">Account</a>
-            <a href="downloads.html">Downloads</a>
-            <button id="btn-login" style="display: none; cursor: pointer; margin-left: 10px;">Log In</button>
-            <button id="btn-logout" style="display: none; cursor: pointer; margin-left: 10px;">Log Out</button>
-            <a href="login.html">Client Login</a>
-        </nav>
+    <nav class="nav-links">
+        <a href="aboutMe.html">About Me</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="#" id="featured-download" class="cta-btn">Download Featured Photo</a>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScItaIEJJUYeuZIeEyVkKj-dsKjH9J_uKsLu_fnXZ0eSiY2Eg/viewform?usp=publish-editor" class="cta-btn" target="_blank" rel="noopener noreferrer">Submit a Request</a>
+    </nav>
 </header>
 
 <div class="container">
@@ -119,6 +114,21 @@
         console.log("Downloading mock file: " + mockPhotoPath);
     });
 </script>
-<script src="auth.js"></script>   
+    <div id="photoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+
+        <img id="modalImage" src="" alt="Selected Photo">
+
+        <div id="payment_section">
+    <h3>Purchase This Photo</h3>
+    <div id="alerts"></div>
+    <div id="paypal-button-container"></div>
+</div>
+    </div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+<script src="Paypal_buttons.js"></script>
+<script src="gallery_popup.js"></script>
 </body>
 </html>
