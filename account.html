@@ -3,46 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account Management</title>
+    <title>Your Account - Ziy Photos</title>
+
     <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="auth.js" defer></script>
+
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
-        #profile-view { display: none; margin-top: 20px; }
-        img { border-radius: 50%; width: 100px; height: 100px; }
-        button { padding: 10px 20px; cursor: pointer; margin: 10px; background-color: #333; color: white; border: none; border-radius: 4px;}
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; }
+        
+        /* Navigation styling to match the rest of your site */
+        nav { background-color: #1a1a4b; padding: 15px 30px; display: flex; gap: 20px; justify-content: center; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+
+        /* The Account Card UI */
+        .account-wrapper { display: flex; justify-content: center; align-items: center; min-height: 80vh; }
+        .account-card { background-color: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 100%; }
+        
+        .profile-pic { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; background-color: #20c997; }
+        
+        .info-box { background-color: #f8f9fa; padding: 15px; border-radius: 8px; text-align: left; margin-bottom: 25px; border: 1px solid #e9ecef; }
+        .info-box p { margin: 10px 0; color: #333; font-size: 16px; }
+        
+        /* Buttons */
+        .btn { display: block; width: 100%; padding: 12px; border-radius: 5px; text-decoration: none; font-weight: bold; cursor: pointer; border: none; box-sizing: border-box; margin-bottom: 10px; }
+        .btn-downloads { background-color: #f7d51c; color: #000; } /* Matches your yellow button */
+        .btn-downloads:hover { background-color: #dfbe14; }
+        .btn-logout { background-color: #dc3545; color: white; margin-top: 20px;}
+        .btn-logout:hover { background-color: #c82333; }
     </style>
 </head>
 <body>
+
     <nav>
-        <a href="index.html">Back to Home</a>
-        <button id="btn-login" style="display: none;">Log In</button>
-        <button id="btn-logout" style="display: none;">Log Out</button>
+        <a href="index.html">Home</a>
+        <a href="downloads.html">Downloads</a>
     </nav>
 
-    <div id="profile-view">
-        <h2>Your Account</h2>
-        <img id="profile-pic" src="" alt="Profile Picture">
-        <p><strong>Name:</strong> <span id="profile-name"></span></p>
-        <p><strong>Email:</strong> <span id="profile-email"></span></p>
-        <button onclick="alert('To reset your password, please log out, click Log In, and select Forgot Password on the Auth0 screen.')">Reset Password</button>
+    <div class="account-wrapper">
+        <div class="account-card">
+            <h2>Your Account</h2>
+
+            <img id="profile-pic" class="profile-pic" src="" alt="Profile Picture">
+
+            <div class="info-box">
+                <p><strong>Username:</strong> <span id="profile-name">Loading...</span></p>
+                <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+            </div>
+
+            <a href="downloads.html" class="btn btn-downloads">Go to My Downloads</a>
+            
+            <button id="btn-logout" class="btn btn-logout">Log Out securely</button>
+        </div>
     </div>
 
-    <script src="auth.js"></script>
-    <script>
-        // Load account details after auth.js initializes
-        setTimeout(async () => {
-            const isAuthenticated = await auth0Client.isAuthenticated();
-            if (isAuthenticated) {
-                const user = await auth0Client.getUser();
-                document.getElementById("profile-pic").src = user.picture;
-                document.getElementById("profile-name").innerText = user.name;
-                document.getElementById("profile-email").innerText = user.email;
-                document.getElementById("profile-view").style.display = "block";
-            } else {
-                document.getElementById("profile-view").innerHTML = "<p>Please log in to manage your account.</p>";
-                document.getElementById("profile-view").style.display = "block";
-            }
-        }, 1000); 
-    </script>
 </body>
 </html>
