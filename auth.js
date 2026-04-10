@@ -8,7 +8,7 @@ window.onload = async () => {
         authorizationParams: {
             redirect_uri: window.location.origin
         },
-        cacheLocation: 'localstorage' // This is the magic fix that keeps them logged in across pages!
+        cacheLocation: 'localstorage' // This keeps them logged in across different pages!
     });
 
     // 2. Catch the user when they return from the Auth0 login screen
@@ -25,9 +25,14 @@ window.onload = async () => {
         
         // If we are on the Account page, fill in their info
         if (document.getElementById('profile-name')) {
-            document.getElementById('profile-name').innerText = user.name || "Client";
+            // Auth0 saves the custom username as "nickname"
+            document.getElementById('profile-name').innerText = user.nickname || user.name || "Client";
             document.getElementById('profile-email').innerText = user.email;
-            document.getElementById('profile-pic').src = user.picture;
+            
+            // Only try to load a picture if the HTML element exists
+            if (document.getElementById('profile-pic')) {
+                document.getElementById('profile-pic').src = user.picture;
+            }
         }
 
         // Hide login buttons, show logout if you have them
