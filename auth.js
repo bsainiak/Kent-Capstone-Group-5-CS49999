@@ -1,76 +1,50 @@
 let auth0Client = null;
 
-// Initialize the Auth0 Client when the page loads
 window.onload = async () => {
-    try {
-        auth0Client = await auth0.createAuth0Client({
-            domain: "dev-mofp6o657an4qvyp.us.auth0.com", 
-            clientId: "kZMspkx3muJ92A8p73N2RU1QO7wbWnh0",
-            authorizationParams: {
-                redirect_uri: window.location.origin
-            }
-        });
-    } catch (error) {
-        console.error("Auth0 Initialization Error:", error);
-        return;
-    }
-
-    // Check if the user is returning from the Auth0 login page
-    if (location.search.includes("state=") && location.search.includes("code=")) {
-        await auth0Client.handleRedirectCallback();
-        window.history.replaceState({}, document.title, "/"); 
-    }
-
-    // Check if the user is currently logged in
-    const isAuthenticated = await auth0Client.isAuthenticated();
-
-    if (isAuthenticated) {
-        console.log("User is successfully authenticated!");
-        const user = await auth0Client.getUser();
-        
-        // 1. Update Navigation Buttons
-        const loginBtn = document.getElementById("btn-login");
-        const logoutBtn = document.getElementById("btn-logout");
-        
-        if (loginBtn) loginBtn.style.display = "none"; 
-        if (logoutBtn) logoutBtn.style.display = "inline-block"; 
-
-        // 2. Populate Account Page 
-        if (window.location.pathname.includes("account.html")) {
-            const emailDisplay = document.getElementById("user-email");
-            const profilePic = document.getElementById("profile-pic");
-            
-            if (emailDisplay) emailDisplay.innerText = user.email;
-            if (profilePic) profilePic.src = user.picture;
-        }
-
-    } else {
-        console.log("User is not logged in.");
-        
-        const loginBtn = document.getElementById("btn-login");
-        const logoutBtn = document.getElementById("btn-logout");
-        
-        if (loginBtn) loginBtn.style.display = "inline-block";
-        if (logoutBtn) logoutBtn.style.display = "none";
-    }
-
-    // Attach Event Listener to ALL Login Buttons
-    const loginButtons = document.querySelectorAll("#btn-login");
-    loginButtons.forEach(btn => {
-        btn.addEventListener("click", async () => {
-            await auth0Client.loginWithRedirect();
-        });
+    // 1. Initialize Auth0 with Local Storage Enabled
+    auth0Client = await auth0.createAuth0Client({
+        domain: "dev-mofp6o657an4qvyp.us.auth0.com", 
+        clientId: "kZMspkx3muJ92A8p73N2RU1QO7wbWnh0",
+        authorizationParams: {
+            redirect_uri: window.location.origin
+        },
+        cacheLocation: 'localstorage' // This is the magic fix that keeps them logged in across pages!
     });
 
-    // Attach Event Listener to the Logout Button
-    const logoutBtn = document.getElementById("btn-logout");
-    if (logoutBtn) {
-        logoutBtn.addEventListener("click", () => {
-            auth0Client.logout({
-                logoutParams: {
-                    returnTo: window.location.origin
-                }
-            });
-        });
+    // 2. Catch the user when they return from the Auth0 login screen
+    if (window.location.search.includes("code=") && window.location.search.includes("state=")) {
+        await auth0Client.handleRedirectCallback();
+        window.history.replaceState({}, document.title, window.location.pathname); // Cleans up the URL bar
+    }
+
+    // 3. Check if they are logged in, and update the pages!
+    const isAuthenticated = await auth0Client.isAuthenticated();
+    
+    if (isAuthenticated) {
+        const user = await auth0Client.getUser();
+        
+        // If we are on the Account page, fill in their info
+        if (document.getElementById('profile-name')) {
+            document.getElementById('profile-name').innerText = user.name || "Client";
+            document.getElementById('profile-email').innerText = user.email;
+            document.getElementById('profile-pic').src = user.picture;
+        }
+
+        // Hide login buttons, show logout if you have them
+        if (document.getElementById('btn-login')) document.getElementById('btn-login').style.display = 'none';
+        if (document.getElementById('btn-logout')) document.getElementById('btn-logout').style.display = 'block';
     }
 };
+
+// 4. Button Click Logic
+if (document.getElementById('btn-login')) {
+    document.getElementById('btn-login').addEventListener('click', () => {
+        auth0Client.loginWithRedirect();
+    });
+}
+
+if (document.getElementById('btn-logout')) {
+    document.getElementById('btn-logout').addEventListener('click', () => {
+        auth0Client.logout({ logoutParams: { returnTo: window.location.origin } });
+    });
+}
