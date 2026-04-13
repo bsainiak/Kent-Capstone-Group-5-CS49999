@@ -1,4 +1,12 @@
-.package-lock.jsom
+.package-lock.json
 node_modules/
 
-database/protfolio.db
+./database/protfolio.db
+
+ingest-app/archive/
+ingest-app/log/
+ingest-app/photos/
+
+./ingest-app/load.sql
+./ingest-app/load_events.sql
+./ingest-app/load_subjects.sql
