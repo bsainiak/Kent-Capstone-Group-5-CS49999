@@ -4,186 +4,115 @@ PRAGMA foreign_keys = ON;
 
 BEGIN;
 	
--- Events
 INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (1, 'Classic 24 at Daytona', 'HSR', '2024', 'Daytona');
 INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (2, 'The Mitty', 'HSR', '2025', 'Road Atlanta');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (3, 'Michelin GT Ford Mustang Challenge', 'IMSA', '2025', 'Verginia International Raceway');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (4, 'Michelin GT MX5 Cup', 'IMSA', '2025', 'Verginia International Raceway');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (5, 'Michelin GT Pilot Challenge', 'IMSA', '2025', 'Verginia International Raceway');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (6, 'Michelin GT VP Racing Sportscar', 'IMSA', '2025', 'Verginia International Raceway');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (7, 'Michelin GT Weathertech Sportscar', 'IMSA', '2025', 'Verginia International Raceway');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (8, 'GT America', 'SRO', '2025', 'Barber Motorsports Park');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (9, 'GT World Challange America', 'SRO', '2025', 'Barber Motorsports Park');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (10, 'GT4 America', 'SRO', '2025', 'Barber Motorsports Park');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (11, 'TC America', 'SRO', '2025', 'Barber Motorsports Park');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (12, 'Toyota GR Cup', 'SRO', '2025', 'Barber Motorsports Park');
-INSERT INTO Events (EventID, Series, EventDate, Location) VALUES (13, 'SVRA', '2025', 'Road Atlanta');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (14, 'TA-GT', 'Trans-AM', '2025', 'Road Atlanta');
-INSERT INTO Events (EventID, EventName,Series, EventDate, Location) VALUES (15, 'TA2', 'Trans-AM', '2025', 'Road Atlanta');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (3, 'Michelin GT Ford Mustang  Challenge', 'IMSA', '2025', 'Virginia International Raceway');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (4, 'Michelin GT MX5 Cup', 'IMSA', '2025', 'Virginia International Raceway');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (5, 'Michelin GT Pilot Challenge', 'IMSA', '2025', 'Virginia International Raceway');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (6, 'Michelin GT VP Raceing Sportscar', 'IMSA', '2025', 'Virginia International Raceway');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (7, 'Michelin GT Weathertech Sportscar', 'IMSA', '2025', 'Virginia International Raceway');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (8, 'GT America', 'SRO', '2025', 'Barber Motorsports Park');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (9, 'GT World Challenge America', 'SRO', '2025', 'Barber Motorsports Park');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (10, 'GT4 America', 'SRO', '2025', 'Barber Motorsports Park');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (11, 'TC America', 'SRO', '2025', 'Barber Motorsports Park');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (12, 'Toyota GR Cup', 'SRO', '2025', 'Barber Motorsports Park');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (13, 'SVRA 2025', 'SVRA', '2025', 'Road Atlanta');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (14, 'TA-GT', 'Trans-AM', '2025', 'Road Atlanta');
+INSERT INTO Events (EventID, EventName, Series, EventDate, Location) VALUES (15, 'TA2', 'Trans-AM', '2025', 'Road Atlanta');
 
--- Images
--- Classic 24 at Daytona, 2024
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (1, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9396', X'e302e23b1ad11fbdb6aedb0e53660bcc', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (2, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9419', X'8ca5de5f4b4a2061a793707cd1b59c12', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (3, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9429', X'ba839331e073bb0f46a59f81d8d70ea4', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (4, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9467', X'af2a328f19b7882e6857a9d52cf889e0', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (5, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9482', X'0892a22c4e83821c31644799adf65860', 1.00);
- INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (6, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9490 1', X'309bf9b3526398ceb57ce746937f3763', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (7, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9512', X'357ccb73e6bb35f61609c5eda135d962', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (8, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9531', X'c67b4a613de259ae37805361d46fc22d', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (9, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9538', X'61196e60f7e4fc6d3cb3e3edda4f356b', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (10, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9693', X'0ce48b73a262e823acae22fc5fd082d3', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (11, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9695', X'570eb1dd796d4f1d68d5422627f34972', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (12, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9701', X'0da6997e1cac7b907588b7f49a4de58d', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (13, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/_DSC9710', X'45837e41375612c2cd5bc6d9f3bd150e', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (14, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/DSC07601', X'0f8399393d95622818194aff5f16b978', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (15, 1, '/images/Photos/HSR/Classic 24 at Daytona 2024/DSC07606', X'22f70829adcd1c2b8bcd8c3a51179804', 1.00);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (1, 1, './images/photos/Daytona01', X'cb85a55fabafc5868b0c91b08e6c376da002fa8f95b8d02b1d91f19245615ea4', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (2, 1, './images/photos/Daytona02', X'8586a2d8a683a64a261a36f2d278ca26bd24f0a4e17a707d6d8bb3e9da7da873', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (3, 1, './images/photos/Daytona003', X'4c6b2f5425a3d8a2fed5eda97a6d0cb4d31b357f7eb3383a391c46943b17c6e1', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (4, 1, './images/photos/Daytona04', X'956810dff4f7a0201f7f694efb1e421981596dbe3285d410dabc087a599793f6', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (5, 1, './images/photos/Daytona005', X'9172cae3cba9bb43cb66eb25c8214e72e17ab4f23582157ea6eca9a557cad541', 0.1);
 
--- The Mitty, 2025
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (16, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3461', X'2cbbdc05f936c9fb1f31ae153e0c93d2', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (17, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3491', X'61a76fa90ad9c00298c60a828dde586b', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (18, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3498', X'c406aa03637749f991590a39c5281165', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (19, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3584', X'2ef462461ca978aafad341341301f026', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (20, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3588', X'a4f00e1dbc2b302ed684e115e0ebd63a', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (21, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3610', X'6558665938d8b4bd0e1ea28a3a778284', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (22, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3650', X'cc734f1c60fcd6deffbc029154a6042a', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (23, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3694', X'37d20c382de63029dd5a27297fd2d03c', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (24, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3829', X'721e750342f901381406f607aee5383b', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (25, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3966', X'cd44f47d21ec96417c98b9c4631bf88d', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (26, 2, '/images/Photos/HSR/The Mitty 2025/_DSC3999', X'b18148d0acec73299629f8228959b46a', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (27, 2, '/images/Photos/HSR/The Mitty 2025/_DSC4029', X'6ad46bb554b9b5a6bd92a68dfe0f8159', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (28, 2, '/images/Photos/HSR/The Mitty 2025/_DSC4110', X'a2c8088500534e22d9f56a8fedfa1cfc', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (29, 2, '/images/Photos/HSR/The Mitty 2025/_DSC4111', X'b67ddf642cea321476c50dc6314b327f', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (30, 2, '/images/Photos/HSR/The Mitty 2025/_DSC4145', X'aa1d8b5ad9b3202fa21510d39f4dbe69', 1.00);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (6, 2, './images/photos/Mitty01', X'15683ce54ddb50fa055d6cc4aaf7ef046ce048b8f9dc9010ebe6c3308ce5c627', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (7, 2, './images/photos/Mitty02', X'4cde58a6d90da4799652a4b2942658099f79ce0279ce91de1e385155ec36c8d5', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (8, 2, './images/photos/Mitty03', X'1ae83b378ea136cb9ecc70071c1a1434cf8e59316a8abf742a4eb7d409f354bd', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (9, 2, './images/photos/Mitty04', X'a561a1be7c812af69d030c512007297cc05e01f2a4a86150dc0c5fb902875183', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (10, 2, './images/photos/Mitty05', X'3c22f3d830b02ab90c0c05ac91602158c6208f514492394f8c3b94ba550ca6e8', 0.9);
 
--- SVRA Road Atlanta, 2025
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (31, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0593', X'fbdef5fbe0cad48759f190b89cd808a0', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (32, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0594', X'285cbaf9271cd161a10dd1a0de5aa538', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (33, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0598', X'9a002887d459b662ff4aaf8be34b6d7b', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (34, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0603', X'2d85ba5f2109971794e0d4ace746dfcb', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (35, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0604', X'19aef5342880895e90014fc8ae7dc6fa', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (36, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0616', X'9964ef7b371e47023ce94eccee2159a9', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (37, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0621', X'da87236891b108f54b9dce3592976c73', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (38, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0655', X'ff5bae8e6c4b72bb9c1b3d874681eaf8', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (39, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0656', X'e0f66e0022fa6fa6605c65d9f5df9f1f', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (40, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0658', X'c6b765eead219c3b87ae804d92b6697b', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (41, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0730', X'fe61e0a62dbb7bbb20b01e271b6d506b', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (42, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0738', X'e17ba496e0ed4f3406b1602cf06f0944', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (43, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0740', X'34076e3a7ee72d6818f37e2cc3813946', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (44, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0754', X'9ad3ba174f6ff303926ba1b398bad32a', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (45, 13, '/images/Photos/SVRA/Road Atlanta 2025/DSC_0755', X'551edda8e0343b45363194364df9a20f', 1.00);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (11, 3, './images/photos/FordMustang01', X'a066a2654b0b4c1f2ba96bd2d0b4f7f0adf952d608639ea1813c7e90db94b1ef', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (12, 3, './images/photos/FordMustang02', X'702fcc03f8951e510e00f8bc7673728fe3120a397173e660ac0f101b61046315', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (13, 3, './images/photos/FordMustang03', X'18b27a93bba80fd8ba1e720999d4f2316f2c398eb45fd1e39dc2f4fa48aa0b4b', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (14, 3, './images/photos/FordMustang04', X'1c99f12fc3283e2d96cccb1688bd3bee90de2fffd66607446c7a995c69de81d3', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (15, 3, './images/photos/FordMustang05', X'7b9abf332c820a4f94a5d8e346dad6da417d530228ee9e18051faa565975500a', 0.1);
 
--- Trans-Am TA-GT, 2025
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (46, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2664', X'193696e9f7f2ed1189e9668b62834194', 1.00);
- INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (47, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2667 1', X'19277b611853036f85b27d2c02acfcc6', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (48, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2669', X'ccab995b46f1c43dafa597172ee2da32', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (49, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2675', X'47372462daa3cc76123661edcae4ded5', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (50, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2686', X'7142dc87bafcddf9e10d6d65429a11c5', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (51, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2703', X'cb9e71c4c4d6364200d02a4e0f26252b', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (52, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2707', X'e622222a167fa6f4eee3efb6348855ea', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (53, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2708', X'e7ea7e0f9273a0f8ec604263ad453ca8', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (54, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2712', X'732a190e63cdc00f7c4bb1423ded1e77', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (55, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2714', X'b4307d6624f4e8c4ff7445669dce736d', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (56, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2727', X'd6c4adb48ae26c2879536f52ba0c4ba2', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (57, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2728', X'0d312f6f97b94b63d9ee79d95ffb6d44', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (58, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2734', X'105c8e952d64728408c2aa7c485e840d', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (59, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2735', X'c4ca680900b68bab615422f12b5bbd62', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (60, 14, '/images/Photos/Trans Am/Road Atlanta 2025/TA-GT/_DSC2737', X'e1f7e7ca8622bb632589138d56a8f9b7', 1.00);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (16, 4, './images/photos/MX501', X'c0795283e7780a065f84e40b5400d0c0210fddbbfa3c04910c98d473f89e16df', 0.2);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (17, 4, './images/photos/MX502', X'15dc9174579c2f2c1e7cd5126ba6f5a05ebd92cece59bb9e5c2efd16d4014c8b', 0.2);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (18, 4, './images/photos/MX503', X'0a616196079f24cf3ca1e21898ee1b0df14358949c63a066e437c045c8303656', 0.2);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (19, 4, './images/photos/MX504', X'61eb96145d8ab98f7db0389238d461d7ed225d8cdc90bcd453c9cb3ad449fb3b', 0.2);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (20, 4, './images/photos/MX505', X'2f4effa18873d4fc6e02630f176b589a3d19c3975b8ea78cdb2d9fe7ea73e283', 0.2);
 
--- Trans-AM TA2, 2025
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (61, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC2532', X'c35a1064ba8cf9ef28a4bed34e7db923', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (62, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC2542', X'16cf07c56fca69cfc64acf92e4d293dd', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (63, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC2544', X'5c70ab2abcba40db951d57e37406a97c', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (64, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC2578', X'6465d6d0e923fdaa1f4b155599598f8e', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (65, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC3431', X'a4946bfcbfd8499c02bd12d00420c20c', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (66, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC3434', X'b5a02a9df2f9cca60f3280bc358f777c', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (67, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC3436', X'e78bfc3d325951741f2aaeb9221fc4d0', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (68, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC3441', X'39cb5963c95cffdaf1cbdb10639f0533', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (69, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC3452', X'51bc991035b970d7935b35a3c20e5cff', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (70, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/_DSC3454', X'5a07919bbcafb48d2132ba97eda7a572', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (71, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/DSC_0131', X'd72b71bfe70a5bb38d04a0f2acee112d', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (72, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/DSC_0172', X'ec968c8ce0d3ce039b6439c2c74d0800', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (73, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/DSC_0174', X'8b21cd805d8dbb99fe9045e35635767e', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (74, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/DSC_0175', X'6f29f1c227065cc6f835102c8c222342', 1.00);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (75, 15, '/images/Photos/Trans Am/Road Atlanta 2025/TA2/DSC_0176', X'322dddfdd0154fab4a7644820244de0a', 1.00);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (21, 5, './images/photos/Pilot01', X'19e1dd9020f5e589f378cc9c003c5156739e7778ffc23f9236fd915276287189', 0.3);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (22, 5, './images/photos/Pilot02', X'c2f72bdb3dc484f9446ba16eb84751c0dab6d91e1666e03fa2d2739c5de2e024', 0.3);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (23, 5, './images/photos/Pilot03', X'90a43b45f1e56085f8d20972b7c6d89553c05b98192795dd39c2741e9a033e15', 0.3);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (24, 5, './images/photos/Pilot04', X'08268e6872e90607c46b45e91a4c6c188ae47f93892af8bb38b28d0f10040802', 0.3);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (25, 5, './images/photos/Pilot05', X'c5b26f52a339b642d73e63e0920d10eefbe9f984e64d6f1301afd107d618c5ad', 0.3);
 
--- IMSA Michelin GT Ford Mustang Challenge
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (76, 3, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Ford Mustang Challenge/_DSC5696', X'f4990e403d619a7a62de7a4757ed21d9', 1.50);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (77, 3, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Ford Mustang Challenge/_DSC5700', X'0cec896de46daf5df1d3f103c8c9d0ac', 1.50);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (78, 3, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Ford Mustang Challenge/_DSC5701', X'53e4c7914f97b90d04032c629c1ccd77', 1.50);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (79, 3, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Ford Mustang Challenge/_DSC5702', X'7251b188d9f96fbf895b9ec719632c99', 1.50);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (80, 3, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Ford Mustang Challenge/_DSC5703', X'8ce0928609836970241bd3ac80b05432', 1.50);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (26, 6, './images/photos/VP01', X'8dbee481847da73cf5a17a828726e3f733c5dd10f71bd44907885304c2efb897', 0.4);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (27, 6, './images/photos/VP02', X'8c8ca084143af935b70a9d9fc68df681e42597940611f9b8c414a8a787c29dad', 0.4);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (28, 6, './images/photos/VP03', X'779a5d91edbcd08bc0ce7e691beed972c52bb2ab71439e0e6eac81a406f32303', 0.4);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (29, 6, './images/photos/VP04', X'f77a2792cb77f15fe1524ddc6dc4151185f2728ca1159ba6c3e8f74472bb9ffd', 0.4);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (30, 6, './images/photos/VP05', X'5ce99cc9a5f398f180356901995e0a76add1f39c61ca2270730c9f4e1616b530', 0.4);
 
--- IMSA Michelin GT MX5 Cup
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (81, 4, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/MX5 Cup/_DSC0555', X'd126827c74659fe50a4e006fb2f767a4', 1.25);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (82, 4, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/MX5 Cup/_DSC0556', X'a92d4c95506c2f225e9da0c25044b910', 1.25);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (83, 4, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/MX5 Cup/_DSC0557', X'406ccfb18980643f8f2d76523054e6cc', 1.25);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (84, 4, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/MX5 Cup/_DSC0565', X'fcd9ff168e94005ce02449bf415d65c1', 1.25);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (85, 4, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/MX5 Cup/_DSC0567', X'b31ac3fb831b4ecd81b9301fc520f4dd', 1.25);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (31, 7, './images/photos/Weathertech01', X'88e7a1ca75eafb509ece6ebdf2af8f2da99a4aeb8c91042a28c22199fefc1d24', 0.5);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (32, 7, './images/photos/Weathertech02', X'cfdcae4d061ad89570c0af432e88b42940776066297cee8a194af6daf9d26f2e', 0.5);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (33, 7, './images/photos/Weathertech03', X'05e841fe7763452e7ec0c482a93fdd4630a8640059fd69e8e78eb80384ed7f48', 0.5);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (34, 7, './images/photos/Weathertech04', X'92d5df46bb842ff735eb06cacabb91f4f53b424f93c39eb78a11ac39ba77b5b0', 0.5);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (35, 7, './images/photos/Weathertech05', X'29e8cca0b708bd531b1825fb3d71f9800bbd3e54582e32720c486fe63bc5b6b4', 0.5);
 
--- IMSA Michelin GT Pilot Challenge
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (86, 5, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Pilot Challenge/_DSC5538', X'a287294b320eaccc0b535bee67bdafc7', 1.75);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (87, 5, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Pilot Challenge/_DSC5545', X'c62afc573bb6e7b298a00d9cecb1a304', 1.75);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (88, 5, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Pilot Challenge/_DSC5549', X'1a9095e5d29f05896f4537c11aad4e57', 1.75);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (89, 5, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Pilot Challenge/_DSC5566', X'b814fe9fd571c49c41624779c99c8efb', 1.75);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (90, 5, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Pilot Challenge/_DSC5575', X'4b11ce3a01bd33b39892f487aa793305', 1.75);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (36, 8, './images/photos/GTAmerica01', X'd3b6672fd38cc99d10de03414412c39baabf0ac5794f70e2d538eabf9f63f392', 0.6);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (37, 8, './images/photos/GTAmerica02', X'888fe2fdc19a54325d6c330e3859f18e8568a4959eaa8052f2cd76482da48a41', 0.6);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (38, 8, './images/photos/GTAmerica03', X'c5b26c856b83225f126f5200c092abc93738b05fb131d8dfb1fdb6d631086f7e', 0.6);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (39, 8, './images/photos/GTAmerica04', X'1c73633bd4c8cdc390a228299114832f69320ad80e9aa6e43a15b3dd9127605a', 0.6);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (40, 8, './images/photos/GTAmerica05', X'b21154c5a9cc55e34d9fdd2d21e47849f0ed04de31d6fdde297708e2a1abfee7', 0.6);
 
--- IMSA Michelin GT VP Racing Sportscar
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (91, 6, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/VP Racing SportsCar Challenge/_DSC5783', X'd50f5e0ee63a9e36066863b9142678c2', 0.75);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (92, 6, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/VP Racing SportsCar Challenge/_DSC5784', X'7dc554f51acdc92f8e25e5fb0a9f10f0', 0.75);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (93, 6, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/VP Racing SportsCar Challenge/_DSC5785', X'8604ee3645c7318014551501d13855cc', 0.75);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (94, 6, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/VP Racing SportsCar Challenge/_DSC5786', X'd682e2e098edf6e4270df987cf942113', 0.75);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (95, 6, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/VP Racing SportsCar Challenge/_DSC5788', X'9bc19d4868112a8b09a1e2c089528507', 0.75);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (41, 9, './images/photos/GTWorld01', X'825f3f11e68d0f4aa0f1f02b3adba6fdd9f5a3f5637ec7707f75eb08eff97631', 0.7);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (42, 9, './images/photos/GTWorld02', X'fa8cf1af9d1d011cfe8c1a2d0f1143139fc1c666e598a3214e8894cf9cebfd5f', 0.7);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (43, 9, './images/photos/GTWorld03', X'f1ba72d52834befdbe12fca017eac97623c4543c25a3c819c3fa0e7c01b6f037', 0.7);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (44, 9, './images/photos/GTWorld04', X'8c9fd83f7e18cf462fc46cab09cab6034b37bb191c514accc60e0b2f5d3874d9', 0.7);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (45, 9, './images/photos/GTWorld05', X'a385556947b76b0b8f2acb55096f8da13c7b653b8cc9b12386f70db6bf3b373f', 0.7);
 
--- IMSA Michelin GT Weathertech Sportscar
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (96, 7, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Weathertech Sportscar Challenge/_DSC0105', X'5c3b51d6e58fd1ca7c2f4c358df27db7', 0.25);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (97, 7, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Weathertech Sportscar Challenge/_DSC0109', X'bb978efea8ffba8bfb90022a65633710', 0.25);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (98, 7, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Weathertech Sportscar Challenge/_DSC0119', X'7e6e474c4d43424513dbc11f9beaaafa', 0.25);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (99, 7, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Weathertech Sportscar Challenge/_DSC0124', X'7323db79c4bdb20f1f8dc2f58ea442cd', 0.25);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (100, 7, '/images/Photos/IMSA/Michelin GT Challenge at VIR - 2025/Weathertech Sportscar Challenge/_DSC0128', X'8889b84728a108876f1ee781ce5a3e55', 0.25);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (46, 10, './images/photos/GT4America01', X'8c922e5de7c62d82944945de32b9cec8d407112b72e6826284d8151383540517', 0.8);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (47, 10, './images/photos/GT4America02', X'e49e0f9ec8d7433062a569b2866157fe3f93d8bb65d4d8cbcff7cc23d37d0e47', 0.8);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (48, 10, './images/photos/GT4America03', X'98e24cc7db69c2a45970f91c1e22bec5080477ca8ae8711a2c83ef174832d6a3', 0.8);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (49, 10, './images/photos/GT4America04', X'24b1a546dfb873047d62308cac7d3a912938dc3bbba597cb390b8a7d805eeaa6', 0.8);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (50, 10, './images/photos/GT4America05', X'84acaba23e8fa7f9ba3424c39c74091333aed01a90ee57b1e221a62987abf9aa', 0.8);
 
--- SRO GT America
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (101, 8, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT America/_DSC0813', X'd4c44143e6e268ea73789779fd6a1c5a', 0.50);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (102, 8, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT America/_DSC0816', X'5d25561239003c1e13906c0285536532', 0.50);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (103, 8, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT America/_DSC0818', X'f6c488a4e5973d7519bbeaf4a292b64a', 0.50);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (104, 8, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT America/_DSC0821', X'45a4da34613740a2e7d756a0f7b7c088', 0.50);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (105, 8, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT America/_DSC0823', X'7d4c13251c7c7783d5dc1798a420cc54', 0.50);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (51, 11, './images/photos/TCAmerica01', X'89eafed5bcf94cc087afc9bbe2a2f16c2d1d82b491c97a809e32462775b7274c', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (52, 11, './images/photos/TCAmerica02', X'57c23ad1c7170c21c1cca84ba855a87940b820428307013af734028ca43c8526', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (53, 11, './images/photos/TCAmerica03', X'9df87dc69214839a68657ad1d14e89b65db57bc0d3fc6e5fa19edf42c5161247', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (54, 11, './images/photos/TCAmerica04', X'fbd6a3d8fe2d648113039d4152e09c9991c204437dbdeb5b9911c78d54784d69', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (55, 11, './images/photos/TCAmerica05', X'6538d116e2f6579bb4bc47eba016b7a84636488e426f779948833a6d54784570', 0.9);
 
--- SRO GT World Challenge America
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (106, 9, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT World Challenge America/_DSC0159', X'2cf8316b20f7482c051eade9835a58a8', 0.99);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (107, 9, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT World Challenge America/_DSC0160', X'30bb560127d2bf8f96d9ada65aa7e7eb', 0.99);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (108, 9, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT World Challenge America/_DSC0161', X'9831a79a99f7fe7bde306c317e54967e', 0.99);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (109, 9, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT World Challenge America/_DSC0163', X'e2a6ea8dd0d26f846cb8136818e96040', 0.99);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (110, 9, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT World Challenge America/_DSC0164', X'54eef0445a6cdf91f808045709f2fe69', 0.99);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (56, 12, './images/photos/ToyotaGR01', X'8e0275ff34c671efb88b8c5d8dd43404faa9a98444c6210536640a7c158ba5a9', 1.0);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (57, 12, './images/photos/ToyotaGR02', X'86cf0cba32bb4cff64ab0b5f0e6408e6e25841a32c5383dd8028e82c0d2f7b4d', 1.0);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (58, 12, './images/photos/ToyotaGR03', X'1688cc872884c086cc9a7644bc0e1d2726a37544d95a0962a25a29d7b026d57b', 1.0);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (59, 12, './images/photos/ToyotaGR04', X'060ea6fc62b0bb4a396efa9589252898b60bae76fe9146fc0daa53fdff2f7aed', 1.0);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (60, 12, './images/photos/ToyotaGR05', X'774ff69200e4ccda436bac9735d8fd2ddbe3f593004c2353648f73735980378f', 1.0);
 
--- SRO GT4 America
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (111, 10, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT4 America/_DSC0380', X'ebc830e3a6e9c0ca0b29a130e0b83ecd', 1.20);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (112, 10, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT4 America/_DSC0382', X'28326b34e1e418d0fecde2f9cb97b3fa', 1.20);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (113, 10, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT4 America/_DSC0386', X'e82aaba64f222af2019fbba73bc21638', 1.20);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (114, 10, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT4 America/_DSC0399', X'6cf26e2dd90e12b433e99b61a84222f7', 1.20);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (115, 10, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/GT4 America/_DSC0400', X'fa8eeabfd251defe00b3272ffea3d664', 1.20);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (61, 13, './images/photos/SVRA01', X'84cf17367f37d70263919f40300e93122f8dbd2aa829f482fe9c792263712cba', 0.1);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (62, 13, './images/photos/SVRA02', X'6156a7b49078276c8d3b19a6e57e2b4f5048399f71e639d513399e5fcd2194b0', 0.2);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (63, 13, './images/photos/SVRA03', X'cd9a8a8f9aa0b68eed31ca4c64cd1857b17c6c3a30fd73637edbc458b1daf6e6', 0.3);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (64, 13, './images/photos/SVRA04', X'0ce40e246038d271f9bf977423e03a181453a67d689a03289aa7582fc0965f3d', 0.4);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (65, 13, './images/photos/SVRA05', X'96338611200ceafa8003d5c30adf20d88d2c5d74ca4ae2523b891d7be085ffd1', 0.5);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (66, 13, './images/photos/SVRA06', X'e840f361fe0023cc1f4617bf20b713b090be2dc46cf501678d8aa7ee50259780', 0.6);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (67, 13, './images/photos/SVRA07', X'cde0be575da1a7cf3a4a8bcfeab010a6107b4cf5d0d4ca5c9b82c01fe5e93404', 0.7);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (68, 13, './images/photos/SVRA08', X'8d4226e7b0ece44cd4eb5b4dd0cb1b0891d938d662f67f0c55fbd20dc8e27680', 0.8);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (69, 13, './images/photos/SVRA09', X'9afaaee8b1b3877df5b827f5aa386abb8b280a9cceec5380908969c9116b2d12', 0.9);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (70, 13, './images/photos/SVRA10', X'36165285877b672b902233c637d31e6b510e9b3d34a579f13818a302d40bb0b8', 1.0);
 
--- TC America
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (116, 11, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/TC America/_DSC0774', X'94d9b15ac89b01a1ca0efeb91db001f1', 1.80);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (117, 11, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/TC America/_DSC0775', X'4f8ad92aaeee2ee376c7e4611286dd2a', 1.80);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (118, 11, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/TC America/_DSC0777', X'116f78cad6ebe296a07c99a21854c054', 1.80);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (119, 11, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/TC America/_DSC0779', X'792d193032f9ce02e2bfb8a4c7936e2c', 1.80);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (120, 11, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/TC America/_DSC0802', X'52bcb7939cf3a933c3cc5f43efcf4c88', 1.80);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (71, 14, './images/photos/TATG01', X'2f83650a0b934e29970e1cec2158f62b7ca1f23259b25c018816f7741d4ecfda', 0.33);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (72, 14, './images/photos/TATG02', X'13d528afdef687d46ffdd518912eb45b5dd00df1edabc6660bb331cd86ada756', 0.33);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (73, 14, './images/photos/TATG03', X'55358416f8ed609aa48d278cd2fc76acba62491ec1137dbeae5265933a0e0f3c', 0.33);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (74, 14, './images/photos/TATG04', X'efb2f7f708d64a51618de63c227094c6ef84426447113d650b506007849ce744', 0.33);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (75, 14, './images/photos/TATG05', X'4caf614f7c5ca7a854c646c2fadf0a0986eab7daf734eb8b4f7856b05027026b', 0.33);
 
--- Toyota GR Cup
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (121, 12, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/Toyota GR Cup/_DSC0038', X'a02cd77d350b33edcbef3dec48c1aa95', 1.11);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (122, 12, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/Toyota GR Cup/_DSC0040', X'3726c3a2db9e704c8768dc8407036979', 1.22);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (123, 12, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/Toyota GR Cup/_DSC0042', X'e6fb23ed63cc97bff5baf725f8cc1685', 1.44);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (124, 12, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/Toyota GR Cup/_DSC0046', X'c926359178c64e0e19f3e87c12b550b1', 1.66);
-INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (125, 12, '/images/Photos/SRO Motorsports America/Barber Motorsports Park - 2025/Toyota GR Cup/_DSC0048', X'4d1adad9cdc9f428e9e20008f20e0a5d', 1.88);
-
-
--- Subjects (optional)
--- INSERT INTO Subjects (SubjectID, DriverName)
--- VALUES (, '');
-
--- Junction table last
--- INSERT INTO PhotoSubjects (ImageID, SubjectID)
--- VALUES (, );
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (76, 15, './images/photos/TA201', X'a1a547074fdca934112060da05632d67c62cc16e38a5e27039acdfc56a589361', 0.66);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (77, 15, './images/photos/TA202', X'84c5da9319086bc7fc3258b9e7206d960cf861d17741fc19dad35481acfd3a56', 0.66);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (78, 15, './images/photos/TA203', X'f5229bf30cbb681abc8e5775516d818b97d4f8e0b07dd5422a3cfcfd28ab81ec', 0.66);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (79, 15, './images/photos/TA204', X'48fc361e47178c58d2a2ec35e3fcc5207416a1921f41eb1d0fa115f2a530eb1e', 0.66);
+INSERT INTO Images (ImageID, EventID, FilePath, Checksum, Cost) VALUES (80, 15, './images/photos/TA205', X'1e02efd669a1b90fc45081520f6875b4bdaede478ac50aef7e41c30c7c082cb6', 0.66);
 
 COMMIT;

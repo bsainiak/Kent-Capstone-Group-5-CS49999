@@ -34,7 +34,7 @@ async function loadGallery(search = '')
             card.className = 'card';
             //card.innerHTML = `<img src="${photo.FilePath}.jpg" alt="Gallery Image">`;
             card.innerHTML = `
-                <img src="${photo.FilePath}.jpg" 
+                <img src="${photo.FilePath}.avif" 
                     alt="Gallery Image" 
                     data-id="${photo.ImageID}" 
                     data-path="${photo.FilePath}.jpg" 
