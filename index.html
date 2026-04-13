@@ -21,16 +21,18 @@
     </div>
 
     <nav>
-            <a href="index.html">Home</a>
-            <a href="aboutMe.html">About Me</a>
-            <a href="styles.html">Styles</a>
-            <a href="images (1).html">Images</a>
-            <a href="contact.html">Contact</a>
-            <a href="account.html">Account</a>
-            <a href="downloads.html">Downloads</a>
+            <a href="index.html" class="nav-btn white-btn">Home</a>
+            <a href="aboutMe.html" class="nav-btn white-btn">About Me</a>
+            <a href="styles.html" class="nav-btn white-btn">Styles</a>
+            <a href="images (1).html" class="nav-btn white-btn">Images</a>
+            <a href="contact.html" class="nav-btn white-btn">Contact</a>
+            <a href="account.html" class="nav-btn white-btn">Account</a>
+            <a href="downloads.html" class="nav-btn white-btn">Downloads</a>
+            
             <button id="btn-login" style="display: none; cursor: pointer; margin-left: 10px;">Log In</button>
             <button id="btn-logout" style="display: none; cursor: pointer; margin-left: 10px;">Log Out</button>
-            <a href="login.html">Client Login</a>
+            
+            <a href="login.html" class="nav-btn yellow-btn">Client Portal Login</a>
         </nav>
 </header>
 
@@ -111,13 +113,16 @@
     const downloadBtn = document.getElementById('featured-download');
 
     //Opens the save as functionality
-    downloadBtn.href = mockPhotoPath;
-    downloadBtn.setAttribute('download', downloadName);
+    // Note: I added a safety check here because your HTML doesn't have an element with ID 'featured-download'
+    if (downloadBtn) {
+        downloadBtn.href = mockPhotoPath;
+        downloadBtn.setAttribute('download', downloadName);
 
-    //click log to verify it's working
-    downloadBtn.addEventListener('click', () => {
-        console.log("Downloading mock file: " + mockPhotoPath);
-    });
+        //click log to verify it's working
+        downloadBtn.addEventListener('click', () => {
+            console.log("Downloading mock file: " + mockPhotoPath);
+        });
+    }
 </script>
 <script src="auth.js"></script>   
 </body>
