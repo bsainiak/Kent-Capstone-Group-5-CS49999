@@ -1,0 +1,4 @@
+.package-lock.jsom
+node_modules/
+
+database/protfolio.db
