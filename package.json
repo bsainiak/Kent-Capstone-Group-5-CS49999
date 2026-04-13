@@ -1,0 +1,27 @@
+{
+  "name": "webshop",
+  "version": "1.0.0",
+  "description": "Raceing Stock Photography Web Store",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bsainiak/Kent-Capstone-Group-5-CS49999.git"
+  },
+  "keywords": [],
+  "author": "Capstone Project: Team 5",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bsainiak/Kent-Capstone-Group-5-CS49999/issues"
+  },
+  "homepage": "https://github.com/bsainiak/Kent-Capstone-Group-5-CS49999#readme"
+}
