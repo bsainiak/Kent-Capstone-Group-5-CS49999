@@ -1,134 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Danko</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="origin">
+        <meta charset="UTF-8">
+        <title>Danko Gallery</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            /* Fallback Modal Styling */
+            .modal
+            {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.8);
+            }
+            .modal-content
+            {
+                background-color: #fefefe;
+                margin: 5% auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                max-width: 700px;
+                text-align: center;
+            }
+            .modal-content img
+            {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+            .close-modal
+            {
+                float: right;
+                font-size: 28px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="images/OCRP Logo.png" alt="Logo"></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search series or location...">
+            </div>
+            <nav class="nav-links">
+                <a href="about.html">About Me</a>
+                <a href="contact.html">Contact</a>
+                <a href="#" class="cta-btn">Submit a Request</a>
+            </nav>
+        </header>
+        <div class="container">
+            <aside class="sidebar">
+    <ul class="sidebar-menu">
+        <li class="sidebar-item">
+            <button class="dropdown-btn">HSR</button>
+            <ul class="submenu">
+                <li><a href="#" class="sidebar-link" data-search="HSR">All HSR</a></li>
+                <li><a href="#" class="sidebar-link" data-search="Classic 24 at Daytona">Classic 24 at Daytona</a></li>
+                <li><a href="#" class="sidebar-link" data-search="The Mitty">The Mitty</a></li>
+            </ul>
+        </li>
 
-<header>
-    <div class="logo">
-    <a href="index.html">
-        <img src="images/OCRP Logo.png" alt="Logo">
-    </a>
-</div>
+        <li class="sidebar-item">
+            <button class="dropdown-btn">IMSA</button>
+            <ul class="submenu">
+                <li><a href="#" class="sidebar-link" data-search="IMSA">All IMSA</a></li>
+                <li><a href="#" class="sidebar-link" data-search="Michelin GT Ford Mustang Challenge">Ford Mustang Challenge</a></li>
+                <li><a href="#" class="sidebar-link" data-search="Michelin GT MX5 Cup">MX5 Cup</a></li>
+                <li><a href="#" class="sidebar-link" data-search="Michelin GT Pilot Challenge">Pilot Challenge</a></li>
+                <li><a href="#" class="sidebar-link" data-search="Michelin GT VP Racing Sportscar">VP Racing Sportscar</a></li>
+                <li><a href="#" class="sidebar-link" data-search="Michelin GT Weathertech Sportscar">Weathertech Sportscar</a></li>
+            </ul>
+        </li>
 
-    <div class="search-bar">
-        <input type="text" placeholder="Search...">
-    </div>
+        <li class="sidebar-item">
+            <button class="dropdown-btn">SRO</button>
+            <ul class="submenu">
+                <li><a href="#" class="sidebar-link" data-search="SRO">All SRO</a></li>
+                <li><a href="#" class="sidebar-link" data-search="GT America">GT America</a></li>
+                <li><a href="#" class="sidebar-link" data-search="GT World Challange America">GT World Challange America</a></li>
+                <li><a href="#" class="sidebar-link" data-search="GT4 America">GT4 America</a></li>
+                <li><a href="#" class="sidebar-link" data-search="TC America">TC America</a></li>
+                <li><a href="#" class="sidebar-link" data-search="Toyota GR Cup">Toyota GR Cup</a></li>
+            </ul>
+        </li>
 
-    <nav class="nav-links">
-        <a href="aboutMe.html">About Me</a>
-        <a href="contact.html">Contact</a>
+        <li class="sidebar-item">
+            <button class="dropdown-btn">SVRA</button>
+            <ul class="submenu">
+                <li><a href="#" class="sidebar-link" data-search="SVRA">All SVRA</a></li>
+                <li><a href="#" class="sidebar-link" data-search="SVRA">Road Atlanta</a></li>
+            </ul>
+        </li>
 
-        <a href="#" id="featured-download" class="cta-btn">Download Featured Photo</a>
-        
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScItaIEJJUYeuZIeEyVkKj-dsKjH9J_uKsLu_fnXZ0eSiY2Eg/viewform?usp=publish-editor" class="cta-btn" target="_blank" rel="noopener noreferrer">Submit a Request</a>
-    </nav>
-</header>
-
-<div class="container">
-
-    <aside class="sidebar">
-        <ul>
-            <li>Sep 2025</li>
-            <li>Aug 2024</li>
-            <li>March 2022</li>
-        </ul>
-    </aside>
-
-<main class="gallery">
-
-    <div class="card">
-        <img src="images/_DSC5696.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5700.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5701.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5702.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5703.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5704.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5719.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5723.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5729.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5730.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5696.jpg" alt="">
-    </div>
-
-    <div class="card">
-        <img src="images/_DSC5700.jpg" alt="">
-    </div>
-
-</main>
-
-</div>
-
-<footer>
-    <a href="contact.html">Contact</a>
-    <a href="#">Copy TAC</a>
-</footer>
-
-<script>
-    //Photo route
-    const mockPhotoPath = "images/_DSC5696.jpg"; 
-    const downloadName = "featured_image.jpg";
-
-    const downloadBtn = document.getElementById('featured-download');
-
-    //Opens the save as functionality
-    downloadBtn.href = mockPhotoPath;
-    downloadBtn.setAttribute('download', downloadName);
-
-    //click log to verify it's working
-    downloadBtn.addEventListener('click', () => {
-        console.log("Downloading mock file: " + mockPhotoPath);
-    });
-</script>
-    <div id="photoModal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-
-        <img id="modalImage" src="" alt="Selected Photo">
-
-        <div id="payment_section">
-    <h3>Purchase This Photo</h3>
-    <div id="alerts"></div>
-    <div id="paypal-button-container"></div>
-</div>
-    </div>
-</div>
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
-<script src="Paypal_buttons.js"></script>
-<script src="gallery_popup.js"></script>
-</body>
+        <li class="sidebar-item">
+            <button class="dropdown-btn">Trans-AM</button>
+            <ul class="submenu">
+                <li><a href="#" class="sidebar-link" data-search="Trans-AM">All Trans-AM</a></li>
+                <li><a href="#" class="sidebar-link" data-search="TA-GT">TA-GT</a></li>
+                <li><a href="#" class="sidebar-link" data-search="TA2">TA2</a></li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+            <main class="gallery" id="photo-gallery">
+                <p>Loading gallery...</p>
+            </main>
+        </div>
+        <div id="photoModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img id="modalImage" src="" alt="Selected Photo">
+                <div id="content"> 
+                    <h3>Purchase This Photo</h3>
+                    <div id="alerts"></div>
+                    <div id="loading"></div> 
+                    <div id="payment_options"></div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <a href="contact.html">Contact</a>
+            <a href="#">Copy TAC</a>
+        </footer>
+    </body>
 </html>
